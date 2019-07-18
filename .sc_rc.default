@@ -1,4 +1,4 @@
 export SC_ROOT=/usr/local/bin/sc
-export $PATH=$PATH:$SC_ROOT
+export PATH=$PATH:$SC_ROOT
 chmod +x $SC_ROOT/sc.sh 
 alias sc=$SC_ROOT/sc.sh 
