@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SC_ROOT=${SC_ROOT:-~/.sc}
+SC_ROOT=${SC_ROOT:-/usr/local/bin/sc}
 SC_REPO=${SC_REPO:-wingkwong/sc}
 SC_REMOTE=${SC_REMOTE:-https://github.com/${SC_REPO}.git}
 SC_BRANCH=${SC_BRANCH:-master}
@@ -27,17 +27,17 @@ Creating RC file
 --------------------------------------------------------
 EOF
 
-    if [ -f ~/.sc_rc ] || [ -h ~/.sc_rc ]; then 
+    if [ -f $SC_ROOT/.sc_rc ] || [ -h $SC_ROOT/.sc_rc ]; then 
         echo ".sc_rc exists"
         exit 1 
     fi
 
-    cp $SC_ROOT/.sc_rc.default ~/.sc_rc || {
+    cp $SC_ROOT/.sc_rc.default $SC_ROOT/.sc_rc || {
         echo "Failed to copy .sc_rc.default"
         exit 1
     }
     
-    test -f ~/.sc_rc && source ~/.sc_rc 
+    test -f $SC_ROOT/.sc_rc && source $SC_ROOT/.sc_rc 
 }
 
 install()

@@ -1,2 +1,2 @@
-export SC_ROOT=~/.sc
+export SC_ROOT=/usr/local/bin/.sc
 source $SC_ROOT/sc.sh
