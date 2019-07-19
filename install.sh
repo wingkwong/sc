@@ -1,6 +1,6 @@
 #!/bin/bash
 
-SC_ROOT=${SC_ROOT:-~/sc}
+SC_ROOT=${SC_ROOT:-~/.sc}
 SC_REPO=${SC_REPO:-wingkwong/sc}
 SC_REMOTE=${SC_REMOTE:-https://github.com/${SC_REPO}.git}
 SC_BRANCH=${SC_BRANCH:-master}
@@ -37,16 +37,32 @@ EOF
         exit 1
     }
     
-    chmod g+x $SC_ROOT/sc.sh 
+    chmod +x $SC_ROOT/sc.sh 
+    cat << EOF
+--------------------------------------------------------
+Creating ~/.bash_profile backup
+--------------------------------------------------------
+EOF
     cp ~/.bash_profile $SC_ROOT/.bash_profile.bak
-    echo 
-    "
-        if [ -f $SC_ROOT/.sc_rc ]; then
-            . $SC_ROOT/.sc_rc
-        fi
-    " >> ~/.bash_profile
 
-    test -f $SC_ROOT/.sc_rc && source $SC_ROOT/.sc_rc 
+    cat << EOF
+--------------------------------------------------------
+Writing ~/.bash_profile 
+--------------------------------------------------------
+EOF
+# TODO: To check if it already exists
+{
+echo "if [ -f $SC_ROOT/.sc_rc ]; then";
+echo "  . $SC_ROOT/.sc_rc";
+echo "fi"
+} >> ~/.bash_profile
+
+    cat << EOF
+--------------------------------------------------------
+Source ~/.bash_profile 
+--------------------------------------------------------
+EOF
+    source ~/.bash_profile 
 }
 
 install()
