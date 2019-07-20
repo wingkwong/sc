@@ -16,6 +16,10 @@ EOF
 enable_alias_module()
 {
     validate_alias_module $1
+    
+    cat $SC_ROOT/modules/$1.sh >> $SC_ROOT/.sc_rc
+    echo "$1 has been enabled."
+    exec bash -l 
 }
 
 disable_alias_module()
