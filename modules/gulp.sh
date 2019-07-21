@@ -1,0 +1,6 @@
+alias gu='gulp'
+alias gus='gulp serve'
+alias gub='gulp build'
+alias guw='gulp watch'
+alias gut='gulp test'
+alias gup='gulp protractor'
