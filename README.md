@@ -34,11 +34,5 @@ To check the usage: ``sc -h ``
 sc -h
 ````
 
-## Avilable Alias Module
-- apache
-- cli
-- django
-- git
-- hg
-- npm
-- yarn
+## Avilable Alias Modules
+Please check out [here](https://github.com/wingkwong/sc/tree/master/modules)
